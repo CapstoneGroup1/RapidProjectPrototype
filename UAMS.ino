@@ -308,11 +308,11 @@ void get_distance(int i){  //gets distance to object in cm
   digitalWrite(pingTRIG, LOW);
   delayMicroseconds(2);
   digitalWrite(pingTRIG, HIGH);
-  delayMicroseconds(15);
+  delayMicroseconds(10);
   digitalWrite(pingTRIG, LOW);
 
   duration = pulseIn(pingECHO,HIGH); //recieves return signal, calculates elapsed time
-  distances[i] = duration;// / 29 / 2;  //converts elapsed time to cm
+  distances[i] = duration / 29 / 2;  //converts elapsed time to cm
   delay(2000);
   Serial.print("Distance ");
   Serial.print(i+1);
