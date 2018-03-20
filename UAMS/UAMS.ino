@@ -3,14 +3,12 @@
 #include <SD.h>
 #include <SPI.h>
 
-
-
 long areas[3]={0,0,0};
 long distances[4]={0,0,0,0};
 long pos = 0;
 
 const int pingTRIG = 12;
-const int pingECHO=13;
+const int pingECHO=11;
 int messageFlag=0;
 const int button=6;
 const int button2=7;
@@ -26,8 +24,6 @@ int orangePin = 5;  //IN4 on the ULN2003 Board, ORANGE end of the Pink/Orange mo
 int currentStep = 0;
 int waveStepCount = 4;
 bool clockwise = true;
-
-
 
 #define STEPS 64
 
@@ -296,10 +292,6 @@ void motor_rotate(int i){
   }
   
 }
-
-  
-
-
 
 void get_distance(int i){  //gets distance to object in cm
   long duration;
